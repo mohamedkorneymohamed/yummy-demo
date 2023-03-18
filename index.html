@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Yummy</title>
+</head>
+
+<body>
+
+    <!------------------------------------------------loadingScreen--------------------------- -->
+    <section id="spinner">
+        <div class="spinner"></div> 
+    </section>
+    <!-- ----------------------------------------------sideNav----------------------------------- -->
+    <section >
+        <div class="navTab  d-flex">
+            <div class="sideNav  d-flex flex-column justify-content-between text-white">
+                <div class="navLinks p-4 ">
+                    <ul class="list-unstyled position-relative">
+                        <li>Search</li>
+                        <li>Category </li>
+                        <li>Area</li>
+                        <li>Ingredients</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                    <div class="nav-footer p-2">
+                        <div class="icons">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <div class="footer">
+                            <p>Copyright Â© 2019 All Rights <br>Reserved.</p>
+                        </div>
+                    </div>
+        
+            </div>
+            <div class="navHeader d-flex flex-column justify-content-between  bg-white p-1 py-5 rounded-1 text-center">
+                <div class="navLogo">
+                    <img src="imgs/logo.png" alt="" >
+                </div>
+                <div class="openCloseNav">
+                    <i class="fa-solid open-close-icon fa-2x fa-align-justify"></i>
+                </div>
+                <div class="footerNavheader">
+                    <i class="fa-solid fa-globe fa-1x  d-block"></i>
+                    <i class="fa-solid fa-share-nodes fa-1x "></i>
+                </div>
+            </div>
+        
+        
+        </div>
+    </section>
+    <!-- ----------------------------------------------search----------------------------------- -->
+    <div class="container w-75" id="searchContainer"></div>
+    <!-- ----------------------------------------------sideNav----------------------------------- -->
+    <section>
+    <div class="container">
+        <div class="dataOfMeals">
+            <div class="row gy-4 mt-5" id="rowOfdata">
+
+            </div>
+        </div>
+    </div>
+    </section>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+body{
+    background-color: #0d0d0d;
+overflow: hidden;
+}
+.dataMeal{
+    transition: all .5s;
+}
+
+.detailsOfMeal{
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f6f6ca;
+    z-index: 3;
+    transition: all .5s;
+}
+.dataMeal:hover .detailsOfMeal{
+    top: 0;
+}
+.navTab{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transition: all .2s;
+    z-index: 99999999;
+}
+.navHeader img{
+    width: 50px;
+}
+.sideNav{
+    background-color: #0d0d0d;
+}
+.navLinks li{
+    cursor: pointer;
+    position: absolute;
+    top:300px;
+}
+.openCloseNav i{
+    cursor: pointer;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    margin: 300px auto;
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+
+}
+  
+  @-webkit-keyframes sk-rotateplane {
+    0% { -webkit-transform: perspective(120px) }
+    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+  }
+  
+  @keyframes sk-rotateplane {
+    0% { 
+      transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+    } 50% { 
+      transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+    } 100% { 
+      transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+      -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+  }
+  #spinner{
+    position: fixed;
+      background-color: #06070b;
+      z-index: 9999999999999999999;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+  }
+  #containerOfArea{
+    cursor: pointer;
+    background-color: white ;
+  }
+  .dataMeal i {
+    color: #ff9800;
+transition: all .5s ;
+  }
+  .dataMeal:hover i{
+color: #E91E63;
+  }
+  #area{
+    color: rgb(67, 65, 65);
+    font-size: 1.5rem;
+  }
+  #searchContainer input::placeholder{
+    color: white;
+  }
+  .detailsOfMeal p,h3{
+cursor: pointer;
+  }
+  .dataMeal{
+    cursor: pointer;
+  }
