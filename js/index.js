@@ -1,5 +1,11 @@
                             "use strict"
 let rowOfdata=document.getElementById('rowOfdata')
+let rName;
+let rAge;
+let rEmail;
+let rPhone;
+let rPassword;
+let rRpassword;
 // ----------------------------------------------loadingScreen---------------------------
 $(document).ready(function(){
     $('.spinner').fadeOut(1000,function(){
@@ -542,80 +548,123 @@ $('#searchContainer').html('')  ;
 
     })
      // ----------------------------------------------validation-----------------------------------
-    function nameValidation() { 
+     function nameValidation() { 
         let regexName = /^[a-zA-Z ]+$/ig
-         if(regexName.test($('#nameInput').val())== true){
-            $('#nameAlert').removeClass('d-block').addClass('d-none')
-            $('#submitBtn').removeAttr("disabled")
-         }
-         else{
-             $('#nameAlert').removeClass('d-none').addClass('d-block')
-             $('#submitBtn').attr("disabled", true)
-             
-         }
 
+        if($('#nameInput').val()==''){
+            $('#submitBtn').attr("disabled", true)
+            
+        }else{
+            if(regexName.test($('#nameInput').val())==true){
+                $('#nameAlert').removeClass('d-block').addClass('d-none');
+                rName=true
+            }
+            else{
+                $('#nameAlert').removeClass('d-none').addClass('d-block');
+                rName=false
+            }
+        }
+        btnSubmit()
     }
     function emailValidation() {
         let regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ig
-        if(regexEmail.test($('#emailInput').val())== true){
-           $('#emailAlert').removeClass('d-block').addClass('d-none')
-           $('#submitBtn').removeAttr("disabled")
-
-        }
-        else{
-            $('#emailAlert').removeClass('d-none').addClass('d-block')
+        if($('#emailInput').val()==''){
             $('#submitBtn').attr("disabled", true)
+            
+        }else{
+            if(regexEmail.test($('#emailInput').val())==true){
+                $('#emailAlert').removeClass('d-block').addClass('d-none');
+                rEmail=true
+            }
+            else{
+                $('#emailAlert').removeClass('d-none').addClass('d-block');
+                rEmail=false
+            }
         }
+        btnSubmit()
     }
     
     function phoneValidation() {
         let regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/ig
-        if(regexPhone.test($('#phoneInput').val())== true){
-           $('#phoneAlert').removeClass('d-block').addClass('d-none')
-           $('#submitBtn').removeAttr("disabled")
-
-        }
-        else{
-            $('#phoneAlert').removeClass('d-none').addClass('d-block')
+        if($('#phoneInput').val()==''){
             $('#submitBtn').attr("disabled", true)
+            
+        }else{
+            if(regexPhone.test($('#phoneInput').val())==true){
+                $('#phoneAlert').removeClass('d-block').addClass('d-none');
+                rPhone=true
+            }
+            else{
+                $('#phoneAlert').removeClass('d-none').addClass('d-block');
+                rPhone=false
+            }
         }
-
+        btnSubmit()
+        
     }
     
     function ageValidation() {
         let regexAge = /^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$/ig
-        if(regexAge.test($('#ageInput').val())== true){
-           $('#ageAlert').removeClass('d-block').addClass('d-none')
-           $('#submitBtn').removeAttr("disabled")
-
-        }
-        else{
-            $('#ageAlert').removeClass('d-none').addClass('d-block')
+        if($('#ageInput').val()==''){
             $('#submitBtn').attr("disabled", true)
+            
+        }else{
+            if(regexAge.test($('#ageInput').val())==true){
+                $('#ageAlert').removeClass('d-block').addClass('d-none');
+                rAge=true
+            }
+            else{
+                $('#ageAlert').removeClass('d-none').addClass('d-block');
+                rAge=false
+            }
         }
+        btnSubmit()
+        
     }
     
     function passwordValidation() {
         let regexPassword =/^(?=.*\d)(?=.*[a-z])[0-9a-zA-Z]{8,}$/ig
-        if(regexPassword.test($('#passwordInput').val())== true){
-           $('#passwordAlert').removeClass('d-block').addClass('d-none')
-           $('#submitBtn').removeAttr("disabled")
-
-        }
-        else{
-            $('#passwordAlert').removeClass('d-none').addClass('d-block')
+        if($('#passwordInput').val()==''){
             $('#submitBtn').attr("disabled", true)
+            
+        }else{
+            if(regexPassword.test($('#passwordInput').val())==true){
+                $('#passwordAlert').removeClass('d-block').addClass('d-none');
+                rPassword=true
+            }
+            else{
+                $('#passwordAlert').removeClass('d-none').addClass('d-block');
+                rPassword=false
+            }
         }
+        btnSubmit()
+        
     }
     
     function repasswordValidation() {
-        if($('#passwordInput').val()== $('#repasswordInput').val()){
-           $('#repasswordAlert').removeClass('d-block').addClass('d-none')
-           $('#submitBtn').removeAttr("disabled")
 
+        if($('#repasswordInput').val()==''){
+            $('#submitBtn').attr("disabled", true)
+            
+        }else{
+            if($('#passwordInput').val()== $('#repasswordInput').val()){
+                $('#repasswordAlert').removeClass('d-block').addClass('d-none')
+                rRpassword=true
+             }
+             else{
+                 $('#repasswordAlert').removeClass('d-none').addClass('d-block')
+                 rRpassword=false
+             }
         }
-        else{
-            $('#repasswordAlert').removeClass('d-none').addClass('d-block')
+        btnSubmit()
+        
+    }
+    function btnSubmit(){
+        if(rName==true && rEmail==true &&rAge ==true && rPhone==true && rPassword==true && rRpassword==true){
+            $('#submitBtn').removeAttr("disabled") 
+                                                
+        }else{
             $('#submitBtn').attr("disabled", true)
         }
     }
+
