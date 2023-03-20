@@ -43,6 +43,9 @@ else{
     })
     // ----------------------------------------------Search Us-----------------------------------
     function search(){
+        $(".navLinks li").animate({
+            top: 300
+        }, 500)
         $('#rowOfdata').html('')
         $('#spinner').fadeIn(500,function(){
             $('.spinner').fadeIn(500,function(){
@@ -79,6 +82,9 @@ else{
         })
         // -----------------------------------------Search By Name----------------------------------------------------
         function displaySearchName(arr){
+            $(".navLinks li").animate({
+                top: 300
+            }, 500)
             let content = "";
             for(let i = 0 ; i< arr.length ; i++){
                 content +=`
@@ -116,6 +122,9 @@ else{
 
     // ----------------------------------------------Search By first letter-----------------------------------
     function displaySearchLetter(arr){
+        $(".navLinks li").animate({
+            top: 300
+        }, 500)
         let content = "";
         for(let i = 0 ; i< arr.length ; i++){
             content +=`
@@ -173,6 +182,9 @@ else{
 
  // ----------------------------------------------category-----------------------------------
     async function getCategories(){
+        $(".navLinks li").animate({
+            top: 300
+        }, 500)
         $('#spinner').fadeIn(500,function(){
             $('.spinner').fadeIn(500,function(){
             $('body').css('overflow','auto')
@@ -196,6 +208,9 @@ $('.navLinks li').eq(1).click(function(){
 })
  // ----------------------------------------------detailsCategory-----------------------------------
  function displayDetails(arr){
+    $(".navLinks li").animate({
+        top: 300
+    }, 500)
     let content = "";
     for(let i = 0 ; i< arr.length ; i++){
         content +=`
@@ -235,6 +250,9 @@ $('.navLinks li').eq(1).click(function(){
 }
  // ----------------------------------------------detailsMeals-----------------------------------
  function displayDetailsOfMeals(arr){
+    $(".navLinks li").animate({
+        top: 300
+    }, 500)
     let content = "";
     for(let i = 0 ; i< arr.length ; i++){
         let x = `${arr[i].strTags}`
@@ -309,6 +327,9 @@ $('.navLinks li').eq(1).click(function(){
 
  // ----------------------------------------------Area-----------------------------------------------------
  function displayArea(arr){
+    $(".navLinks li").animate({
+        top: 300
+    }, 500)
     let content = "";
     for(let i = 0 ; i< arr.length ; i++){
         content +=`
@@ -327,6 +348,9 @@ $('#searchContainer').html('') ;
     }
 
  async function getArea(){
+    $(".navLinks li").animate({
+        top: 300
+    }, 500)
     $('#spinner').fadeIn(500,function(){
         $('.spinner').fadeIn(500,function(){
         $('body').css('overflow','auto')
@@ -351,6 +375,9 @@ $('.navLinks li').eq(2).click(function(){
 })
  // ----------------------------------------------areaDetails-----------------------------------
  function displayAreaDetails(arr){
+    $(".navLinks li").animate({
+        top: 300
+    }, 500)
     let content = "";
     for(let i = 0 ; i< arr.length ; i++){
         content +=`
@@ -393,6 +420,9 @@ $('#searchContainer').html('')  ;
 
  // ----------------------------------------------Ingredients-----------------------------------
  function displayIngredients(arr){
+    $(".navLinks li").animate({
+        top: 300
+    }, 500)
     let content = "";
     for(let i = 0 ; i< arr.length ; i++){
         content +=`
@@ -435,6 +465,9 @@ $('.navLinks li').eq(3).click(function(){
 })
  // ----------------------------------------------ingredientsDetails-----------------------------------
  function displayint(arr){
+    $(".navLinks li").animate({
+        top: 300
+    }, 500)
     let content = "";
     for(let i = 0 ; i< arr.length ; i++){
         content +=`
@@ -462,6 +495,7 @@ $('#searchContainer').html('')  ;
     })
     let sibdeNavInnnerWidth = $('.sideNav').innerWidth()
     $('.navTab').css('left' , -sibdeNavInnnerWidth)
+        $('.openCloseNav i').removeClass('fa-xmark').addClass('open-close-icon');
     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${details}`)
     response = await response.json()
    
@@ -475,7 +509,9 @@ $('#searchContainer').html('')  ;
 }
  // ----------------------------------------------Contact Us-----------------------------------
  function showContacts(){
-
+    $(".navLinks li").animate({
+        top: 300
+    }, 500)
     $('#spinner').fadeIn(500,function(){
         $('.spinner').fadeIn(500,function(){
         $('body').css('overflow','auto')
